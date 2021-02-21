@@ -3,10 +3,12 @@ import App from './App.vue'
 import Cookies from 'js-cookie'
 import router from './router'
 import Element from 'element-ui'
+import './permission'
+
 
 import store from './store'
 import '@/assets/styles/index.scss' // global css
-import '@/assets/styles/ruoyi.scss' // ruoyi css
+import '@/assets/styles/itest.scss' // ruoyi css
 import './assets/icons' // icon
 import './assets/styles/element-variables.scss'
 Vue.use(router);

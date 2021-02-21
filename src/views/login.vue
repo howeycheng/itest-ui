@@ -31,6 +31,17 @@
                     <span v-else>登 录 中...</span>
                 </el-button>
             </el-form-item>
+            <el-form-item style="width:100%;">
+                <el-button
+                    :loading="loading"
+                    size="medium"
+                    type="info"
+                    style="width:100%;"
+                    @click.native.prevent="handleRegister"
+                >
+                    <span v-if="!loading">注 册</span>
+                </el-button>
+            </el-form-item>
         </el-form>
         <!--  底部  -->
         <div class="el-login-footer">
@@ -96,6 +107,10 @@ export default {
                     });
                 }
             });
+        },
+        handleRegister(){
+            this.$router.push({path: "/register"}).catch(() => {
+            })
         }
     }
 };

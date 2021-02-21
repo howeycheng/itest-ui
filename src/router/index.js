@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+import Layout from '@/layout'
 
 /**
  * Note: 路由配置项
@@ -28,7 +28,24 @@ export const constantRoutes = [
         path: '/login',
         component: (resolve) => require(['@/views/login'], resolve),
         hidden: true
-    }
+    },
+    {
+        path: '/register',
+        component: (resolve) => require(['@/views/register'], resolve),
+        hidden: true
+    },
+    {
+        path: '',
+        component: Layout,
+        redirect: 'index',
+        children: [
+            {
+                path: 'index',
+                component: (resolve) => require(['@/views/index'], resolve),
+                name: '首页'
+            }
+        ]
+    },
 ]
 
 export default new Router({

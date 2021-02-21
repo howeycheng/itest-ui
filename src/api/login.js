@@ -13,6 +13,20 @@ export function login(username, password) {
     })
 }
 
+export function register(username, password, email, phoneNumber) {
+    const data = {
+        "userName": username,
+        "email": email,
+        "phoneNumber": phoneNumber,
+        "password": password,
+    }
+    return request({
+        url: '/register',
+        method: 'post',
+        data: data
+    })
+}
+
 // 获取用户详细信息
 export function getInfo() {
     return request({
